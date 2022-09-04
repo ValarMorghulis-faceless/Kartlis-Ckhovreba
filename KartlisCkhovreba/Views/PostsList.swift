@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct PostsList: View {
-    
-   @StateObject var viewModel = PostsViewModel()
-    @State private var showNewPostForm = false
+    @StateObject var viewModel = PostsViewModel()
     
     @State private var searchText = ""
+    @State private var showNewPostForm = false
+    
     var body: some View {
         NavigationView {
             Group {
@@ -35,12 +35,11 @@ struct PostsList: View {
                 case let .loaded(posts):
                     List(posts) { post in
                         if searchText.isEmpty || post.contains(searchText) {
-                            PostsRow(post: post, deleteAction: viewModel.makeDeleteAction(for: post))
-                               
+                            PostRow(viewModel: viewModel.makePostRowViewModel(for: post))
                         }
                     }
-                    .animation(.default, value: posts)
                     .searchable(text: $searchText)
+                    .animation(.default, value: posts)
                 }
             }
             .navigationTitle("Posts")
@@ -50,7 +49,6 @@ struct PostsList: View {
                 } label: {
                     Label("New Post", systemImage: "square.and.pencil")
                 }
-            
             }
             .sheet(isPresented: $showNewPostForm) {
                 NewPostForm(createAction: viewModel.makeCreateAction())
@@ -61,8 +59,8 @@ struct PostsList: View {
         }
     }
 }
-#if DEBUG
 
+#if DEBUG
 struct PostsList_Previews: PreviewProvider {
     static var previews: some View {
         ListPreview(state: .loaded([Post.testPost]))
@@ -70,18 +68,16 @@ struct PostsList_Previews: PreviewProvider {
         ListPreview(state: .error)
         ListPreview(state: .loading)
     }
-}
     
-@MainActor
-private struct ListPreview: View {
-    let state: Loadable<[Post]>
- 
-    var body: some View {
-        let postsRepository = PostsRepositoryStub(state: state)
-        let viewModel = PostsViewModel(postsRepository: postsRepository)
-        PostsList(viewModel: viewModel)
+    @MainActor
+    private struct ListPreview: View {
+        let state: Loadable<[Post]>
+        
+        var body: some View {
+            let postsRepository = PostsRepositoryStub(state: state)
+            let viewModel = PostsViewModel(postsRepository: postsRepository)
+            PostsList(viewModel: viewModel)
+        }
     }
 }
 #endif
-
-
