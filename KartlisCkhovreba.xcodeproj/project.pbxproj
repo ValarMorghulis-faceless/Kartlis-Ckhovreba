@@ -20,6 +20,9 @@
 		0FC5250728C3D44E00AA9169 /* NewPostForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC5250628C3D44E00AA9169 /* NewPostForm.swift */; };
 		0FC5250A28C3DB5B00AA9169 /* PostsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC5250928C3DB5B00AA9169 /* PostsViewModel.swift */; };
 		0FC5250D28C3DF8300AA9169 /* PostsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC5250C28C3DF8300AA9169 /* PostsRepository.swift */; };
+		0FC5251028C40EF500AA9169 /* Loadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC5250F28C40EF500AA9169 /* Loadable.swift */; };
+		0FC5251528C4138600AA9169 /* EmptyListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC5251428C4138600AA9169 /* EmptyListView.swift */; };
+		0FC5251828C518CD00AA9169 /* Alert+Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC5251728C518CC00AA9169 /* Alert+Error.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +37,9 @@
 		0FC5250628C3D44E00AA9169 /* NewPostForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostForm.swift; sourceTree = "<group>"; };
 		0FC5250928C3DB5B00AA9169 /* PostsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsViewModel.swift; sourceTree = "<group>"; };
 		0FC5250C28C3DF8300AA9169 /* PostsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsRepository.swift; sourceTree = "<group>"; };
+		0FC5250F28C40EF500AA9169 /* Loadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loadable.swift; sourceTree = "<group>"; };
+		0FC5251428C4138600AA9169 /* EmptyListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyListView.swift; sourceTree = "<group>"; };
+		0FC5251728C518CC00AA9169 /* Alert+Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Alert+Error.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +76,8 @@
 			isa = PBXGroup;
 			children = (
 				0FC524E628C3737C00AA9169 /* KartlisCkhovrebaApp.swift */,
+				0FC5251128C4133C00AA9169 /* SupportingViews */,
+				0FC5250E28C40ED700AA9169 /* Utilities */,
 				0FC5250B28C3DF5000AA9169 /* Repositories */,
 				0FC5250828C3DB2000AA9169 /* ViewModels */,
 				0FC524FF28C37E3900AA9169 /* Models */,
@@ -129,6 +137,23 @@
 				0FC5250C28C3DF8300AA9169 /* PostsRepository.swift */,
 			);
 			path = Repositories;
+			sourceTree = "<group>";
+		};
+		0FC5250E28C40ED700AA9169 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				0FC5250F28C40EF500AA9169 /* Loadable.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		0FC5251128C4133C00AA9169 /* SupportingViews */ = {
+			isa = PBXGroup;
+			children = (
+				0FC5251428C4138600AA9169 /* EmptyListView.swift */,
+				0FC5251728C518CC00AA9169 /* Alert+Error.swift */,
+			);
+			path = SupportingViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -215,8 +240,11 @@
 				0FC5250D28C3DF8300AA9169 /* PostsRepository.swift in Sources */,
 				0FC5250A28C3DB5B00AA9169 /* PostsViewModel.swift in Sources */,
 				0FC5250528C3857900AA9169 /* PostsRow.swift in Sources */,
+				0FC5251028C40EF500AA9169 /* Loadable.swift in Sources */,
 				0FC5250328C3838A00AA9169 /* PostsList.swift in Sources */,
+				0FC5251828C518CD00AA9169 /* Alert+Error.swift in Sources */,
 				0FC5250728C3D44E00AA9169 /* NewPostForm.swift in Sources */,
+				0FC5251528C4138600AA9169 /* EmptyListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
